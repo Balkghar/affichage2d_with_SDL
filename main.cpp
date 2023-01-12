@@ -23,7 +23,6 @@ int main() {
 
    Affichage2d affichage(1000,1000, 100,200);
 
-
    affichage.initalisationAffichage();
    affichage.nettoyerAffichage(Couleur::blanc);
    affichage.ajouterElementAffichage(10,10, Couleur::noir);
