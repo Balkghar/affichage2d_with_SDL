@@ -40,9 +40,6 @@ void Affichage2d::confCouleur(Couleur couleur){
    case Couleur::noir:
       SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
       break;
-   
-   default:
-      break;
    }
 }
 bool Affichage2d::initalisationAffichage (){
@@ -81,7 +78,6 @@ bool Affichage2d::ajouterElementAffichage(unsigned x, unsigned y, Couleur couleu
 
    SDL_RenderDrawPoint(renderer, x, y);
 
-   
    return false;
 }
 
