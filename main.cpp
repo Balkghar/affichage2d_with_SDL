@@ -21,11 +21,12 @@ using namespace std;
 //-----------------------------------------------------------------------------
 int main() {
 
-   Affichage2d affichage(1000,1000, 100,50);
+   Affichage2d affichage(1000,1000, 100,200);
 
 
    affichage.initalisationAffichage();
-   affichage.mettreAJourAffichage();
+   affichage.nettoyerAffichage(Couleur::blanc);
+   affichage.ajouterElementAffichage(10,10, Couleur::noir);
    affichage.fermerAffichage();
 
    return EXIT_SUCCESS;
