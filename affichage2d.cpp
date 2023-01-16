@@ -17,13 +17,6 @@ Compilateur : gcc version 11.2.0
 #include <iostream>
 #include "affichage2d.hpp"
 
-#if defined(__linux__)  // Or #if __linux__
-#include <SDL2/SDL.h>
-#elif _WIN32
-#include <SDL.h>
-#else
-#include <SDL2/SDL.h>
-#endif
 
 using namespace std;
 
