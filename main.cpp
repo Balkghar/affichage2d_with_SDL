@@ -21,7 +21,7 @@ using namespace std;
 //-----------------------------------------------------------------------------
 int main() {
 
-   Affichage2d affichage(1000,1000, 100,200);
+   Affichage2d affichage(100,100, 50,8);
 
    affichage.initalisationAffichage();
    affichage.nettoyerAffichage(Couleur::blanc);

@@ -21,18 +21,39 @@ enum Couleur{blanc, noir, rouge};
 
    class Affichage2d {
       public:
-         Affichage2d(const unsigned larg, const unsigned haut, const unsigned sdl_del, const unsigned nbr_vals) : largeur(larg), hauteur(haut), sdl_delay(sdl_del), nbre_values(nbr_vals){}
+         /// @brief constructeur de la classe Affichage2d
+         /// @param larg largeur en pixel de la fenêtre
+         /// @param haut hauteur en pixel de la fenêtre
+         /// @param sdl_del delai sdl
+         /// @param ech echèlle de l'affichage, par si 4, 1 pixel dessiné vaudra 4 pixels sur l'écran
+         Affichage2d(const unsigned larg, const unsigned haut, const unsigned sdl_del, const unsigned ech) : largeur(larg), hauteur(haut), sdl_delay(sdl_del), echelle(ech){}
+         /// @brief initialisation de l'affichage
+         /// @return si l'affichage bien été initialisé
          bool initalisationAffichage();
+         /// @brief ajoute un pixel à la fenetre
+         /// @param x position x
+         /// @param y position y
+         /// @param couleur couleur à afficher
+         /// @return si ça a réussi
          bool ajouterElementAffichage(unsigned x, unsigned y, Couleur couleur);
+         /// @brief nettoie la fenetre
+         /// @param couleur la couleur qui va s'afficher
+         /// @return si cela a réussi
          bool nettoyerAffichage(Couleur couleur);
+         /// @brief ferme l'affichage
+         /// @return si cela à réussi
          bool fermerAffichage();
+         /// @brief met à jour l'affichage
+         /// @return si ça a réussi
          bool mettreAjourAffichage();
       private:
+         /// @brief change la couleur de sdl
+         /// @param couleur la couleur à appliquer
          void confCouleur(Couleur couleur);
          const unsigned largeur;
          const unsigned hauteur;
          const unsigned sdl_delay;
-         const unsigned nbre_values;
+         const unsigned echelle;
    };
 
 

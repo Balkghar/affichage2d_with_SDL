@@ -16,7 +16,14 @@ Compilateur : gcc version 11.2.0
 #include <iomanip>
 #include <iostream>
 #include "affichage2d.hpp"
+
+#if defined(__linux__)  // Or #if __linux__
 #include <SDL2/SDL.h>
+#elif _WIN32
+#include <SDL.h>
+#else
+#include <SDL2/SDL.h>
+#endif
 
 using namespace std;
 
@@ -50,12 +57,12 @@ bool Affichage2d::initalisationAffichage (){
    const int  SCREEN_HEIGTH =  this->hauteur;
 
    SDL_Init(SDL_INIT_VIDEO);
-   SDL_CreateWindowAndRenderer(SCREEN_WIDTH*this->nbre_values, SCREEN_HEIGTH*this->nbre_values, SDL_WINDOW_SHOWN, &window, &renderer);
+   SDL_CreateWindowAndRenderer(SCREEN_WIDTH*this->echelle, SCREEN_HEIGTH*this->echelle, SDL_WINDOW_SHOWN, &window, &renderer);
    if (window == nullptr or renderer == nullptr) {
       cout << "SDL not ready ... quitting" << endl;
       return true;
    }
-   SDL_RenderSetScale(renderer, (float)this->nbre_values, (float)this->nbre_values);
+   SDL_RenderSetScale(renderer, (float)this->echelle, (float)this->echelle);
    return false;
 }
 bool Affichage2d::nettoyerAffichage(Couleur couleur){
