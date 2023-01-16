@@ -50,12 +50,12 @@ bool Affichage2d::initalisationAffichage (){
    const int  SCREEN_HEIGTH =  this->hauteur;
 
    SDL_Init(SDL_INIT_VIDEO);
-   SDL_CreateWindowAndRenderer(SCREEN_WIDTH, SCREEN_HEIGTH, SDL_WINDOW_SHOWN, &window, &renderer);
+   SDL_CreateWindowAndRenderer(SCREEN_WIDTH*this->nbre_values, SCREEN_HEIGTH*this->nbre_values, SDL_WINDOW_SHOWN, &window, &renderer);
    if (window == nullptr or renderer == nullptr) {
       cout << "SDL not ready ... quitting" << endl;
       return true;
    }
-   SDL_RenderSetScale(renderer, (float)SCREEN_WIDTH/(float)this->nbre_values, (float)SCREEN_HEIGTH/(float)this->nbre_values);
+   SDL_RenderSetScale(renderer, (float)this->nbre_values, (float)this->nbre_values);
    return false;
 }
 bool Affichage2d::nettoyerAffichage(Couleur couleur){

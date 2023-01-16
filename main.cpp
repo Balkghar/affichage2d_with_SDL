@@ -26,6 +26,11 @@ int main() {
    affichage.initalisationAffichage();
    affichage.nettoyerAffichage(Couleur::blanc);
    affichage.ajouterElementAffichage(10,10, Couleur::noir);
+   affichage.ajouterElementAffichage(10,11, Couleur::noir);
+   affichage.ajouterElementAffichage(10,12, Couleur::noir);
+   affichage.ajouterElementAffichage(10,13, Couleur::noir);
+   affichage.ajouterElementAffichage(10,14, Couleur::noir);
+   affichage.ajouterElementAffichage(10,15, Couleur::noir);
    affichage.mettreAjourAffichage();
    affichage.fermerAffichage();
 
