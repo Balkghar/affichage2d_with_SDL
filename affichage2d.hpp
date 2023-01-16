@@ -62,6 +62,10 @@ enum Couleur{blanc, noir, rouge};
          const unsigned hauteur;
          const unsigned sdl_delay;
          const unsigned echelle;
+         SDL_Window*    window         = nullptr;
+         SDL_Renderer*  renderer       = nullptr;
+         SDL_Event      event;
+         bool           appIsRunning   = true;
    };
 
 

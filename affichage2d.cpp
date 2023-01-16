@@ -21,11 +21,6 @@ Compilateur : gcc version 11.2.0
 using namespace std;
 
 
-// SDL library
-SDL_Window*    window         = nullptr;
-SDL_Renderer*  renderer       = nullptr;
-SDL_Event      event;
-bool           appIsRunning   = true;
 
 void Affichage2d::confCouleur(Couleur couleur){
 
